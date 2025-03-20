@@ -32,7 +32,7 @@ export const sendWelcomeEmail = async (email, username) => {
     const mailOptions = {
       from: "aishwarya.murali1603@gmail.com",
       to: recipient,
-      subject: "Welcome to connectify",
+      subject: "Welcome to Taskify",
       html: WELCOME_EMAIL_TEMPLATE,
       category: "Welcome user",
     };

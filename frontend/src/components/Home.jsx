@@ -30,7 +30,7 @@ const Home = () => {
 
       {/* Navigation Section */}
       <div className="mt-10 flex gap-6">
-        <Link to="/login">
+        <Link to="/signup">
           <button className="bg-blue-800 hover:bg-blue-950 px-6 py-3 text-white font-bold rounded-md">
             Get Started
           </button>

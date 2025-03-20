@@ -34,29 +34,29 @@ export const WELCOME_EMAIL_TEMPLATE = `
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Connectify</title>
+  <title>Welcome to Taskify</title>
 </head>
 <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
-  <div style="background: linear-gradient(to right, #007BFF, #0056b3); padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
-    <h1 style="color: white; margin: 0;">Welcome to Connectify</h1>
+  <div style="background: linear-gradient(to right, #28a745, #218838); padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+    <h1 style="color: white; margin: 0;">Welcome to Taskify</h1>
   </div>
   <div style="background-color: #fff; padding: 20px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
     <p>Hi there,</p>
-    <p>We’re thrilled to have you join <strong>Connectify</strong>, your ultimate platform for networking, collaboration, and opportunity building!</p>
-    <p>Here’s what you can do on Connectify:</p>
+    <p>We’re excited to have you join <strong>Taskify</strong>, your go-to platform for managing tasks, staying productive, and achieving your goals efficiently!</p>
+    <p>Here’s what you can do with Taskify:</p>
     <ul style="padding-left: 20px;">
-      <li>Connect with like-minded individuals.</li>
-      <li>Discover new opportunities tailored to you.</li>
-      <li>Collaborate and bring your ideas to life.</li>
+      <li>Create, organize, and track your tasks seamlessly.</li>
+      <li>Stay on top of your to-do list with reminders and deadlines.</li>
+      <li>Boost productivity with an intuitive and easy-to-use interface.</li>
     </ul>
-    <p>Get started by exploring your dashboard and building your profile:</p>
-    <p>If you have any questions, feel free to reach out. We’re here to help!</p>
-    <p>Happy connecting,</p>
-    <p><strong>The Connectify Team</strong></p>
+    <p>Get started by exploring your task dashboard and adding your first task:</p>
+    <p>If you have any questions or need assistance, feel free to reach out. We're here to help!</p>
+    <p>Stay productive,</p>
+    <p><strong>The Taskify Team</strong></p>
   </div>
   <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
-    <p>You are receiving this email because you signed up for Connectify. If you didn’t create an account, please ignore this email.</p>
-    <p>&copy; 2025 Connectify. All rights reserved.</p>
+    <p>You are receiving this email because you signed up for Taskify. If you didn’t create an account, please ignore this email.</p>
+    <p>&copy; 2025 Taskify. All rights reserved.</p>
   </div>
 </body>
 </html>

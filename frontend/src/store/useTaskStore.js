@@ -3,13 +3,13 @@ import toast from "react-hot-toast";
 import { axiosInstance } from "../../lib/axios";
 
 export const useTaskStore = create((set, get) => ({
-  tasks: [],
+  tasks: [],  
   isLoading: false,
 
   fetchTasks: async () => {
     set({ isLoading: true });
     try {
-      const res = await axiosInstance.get("/tasks");
+      const res = await axiosInstance.get("/tasks/getTasks");
       set({ tasks: res.data.tasks });
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -22,7 +22,7 @@ export const useTaskStore = create((set, get) => ({
   addTask: async (task) => {
     set({ isLoading: true });
     try {
-      const res = await axiosInstance.post("/tasks", task);
+      const res = await axiosInstance.post("/tasks/addTask", task);
       set({ tasks: [...get().tasks, res.data.task] });
       toast.success("Task added successfully");
     } catch (error) {
@@ -66,7 +66,7 @@ export const useTaskStore = create((set, get) => ({
   toggleTaskCompletion: async (taskId) => {
     set({ isLoading: true });
     try {
-      const res = await axiosInstance.patch(`/tasks/${taskId}/toggle`);
+      const res = await axiosInstance.patch(`/tasks/${taskId}`);
       set({
         tasks: get().tasks.map((task) =>
           task.id === taskId ? res.data.task : task
