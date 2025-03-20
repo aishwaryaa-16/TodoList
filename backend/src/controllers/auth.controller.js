@@ -9,9 +9,10 @@ import { sendPasswordResetEmail } from "../nodemailer/emails.js";
 import crypto from "crypto";
 
 export const signup = async (req, res) => {
-  const { email, fullName, password } = req.body;
+  const { fullName, email, password } = req.body;
   try {
     if (!email || !fullName || !password) {
+      console.log(email, fullName, password);
       return res.status(400).json({ message: "All fields are required" });
     }
     if (password.length < 6) {

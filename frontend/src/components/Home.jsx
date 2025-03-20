@@ -23,14 +23,14 @@ const Home = () => {
         <ul className="list-disc list-inside text-left text-gray-600">
           <li>Add, Edit, and Delete Tasks Seamlessly</li>
           <li>Mark Tasks as Completed</li>
-          <li>Save Your Tasks Locally</li>
+          <li>Save Your Tasks on Cloud</li>
           <li>Interactive UI with Live Typing Animation</li>
         </ul>
       </div>
 
       {/* Navigation Section */}
       <div className="mt-10 flex gap-6">
-        <Link to="/tasks">
+        <Link to="/login">
           <button className="bg-blue-800 hover:bg-blue-950 px-6 py-3 text-white font-bold rounded-md">
             Get Started
           </button>
