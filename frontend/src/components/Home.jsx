@@ -5,22 +5,22 @@ const Home = () => {
   return (
     <>
     
-    <div className="container mx-auto my-5 p-5 rounded-xl bg-blue-200 min-h-[85vh] w-full md:w-3/4 lg:w-1/2 flex flex-col items-center">
+    <div className="container mx-auto my-5 p-5 rounded-xl bg-gradient-to-br from-blue-100 to-blue-300 min-h-[85vh] w-full md:w-3/4 lg:w-1/2 flex flex-col items-center">
       {/* Title */}
-      <video src="/src/todo_list_video.mp4" autoPlay loop muted/>
+      <img className='rounded-3xl' src="/src/taskify-logo.png" alt="logo" width={650} height={650}/>
       <h1 className="text-4xl font-bold text-blue-950 text-center mb-5 py-7">
         Welcome to <span className="text-blue-700">Taskify!</span>
       </h1>
 
       {/* Introduction Section */}
-      <p className="text-center text-lg text-gray-700 mb-6">
+      <p className="text-center lg:text-xl sm:text-lg text-gray-800 mb-6 ">
         Your ultimate task organizer to simplify your daily workflow. Create, edit, and manage tasks efficiently and stay on top of your goals!
       </p>
 
       {/* Features Section */}
       <div className="features flex flex-col gap-4 items-center">
         <h2 className="text-2xl font-semibold text-blue-800">Key Features</h2>
-        <ul className="list-disc list-inside text-left text-gray-600">
+        <ul className="list-disc list-inside text-left text-gray-800 sm:text-lg">
           <li>Add, Edit, and Delete Tasks Seamlessly</li>
           <li>Mark Tasks as Completed</li>
           <li>Save Your Tasks on Cloud</li>

@@ -12,7 +12,7 @@ const ForgotPassword = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await forgotPassword(email);
+    await forgotPassword(email);  //user is prompted to enter email, when they submit, forgotPassword action is called and email is passed as the parameter
     setIsSubmitted(true);
   };
 

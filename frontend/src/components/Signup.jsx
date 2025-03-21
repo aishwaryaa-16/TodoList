@@ -7,9 +7,9 @@ import toast from "react-hot-toast"; // Import toast for error messages
 
 const Signup = () => {
   const navigate = useNavigate(); // Initialize navigate
-  const { signup, isSigningUp } = useAuthStore();
+  const { signup, isSigningUp } = useAuthStore();  //signup action is imported from useAuthStore and isSigningUp is used to check if user is signing up
   const [formData, setFormData] = useState({
-    fullName: "",
+    fullName: "",  //all the 3 fields is initially empty
     email: "",
     password: "",
   });
@@ -44,7 +44,7 @@ const Signup = () => {
       const success = validateForm();
       if (success) {
         console.log("Form data:", formData);
-        signup(formData);
+        signup(formData); //signup action is called with form data as parameter-manages the signup process in frontend and backend
         navigate("/verify");
       }
     } catch (error) {
@@ -53,8 +53,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="">
-      <div className="container mx-auto my-5 p-5 rounded-xl bg-blue-200 min-h-[85vh] w-full md:w-3/4 lg:w-1/2 flex flex-col items-center">
+    <div className="min-h-screen">
+      <div className="container mx-auto my-5 p-5 rounded-xl bg-gradient-to-br from-blue-100 to-blue-300 px-4 min-h-[90vh] w-full md:w-3/4 lg:w-1/2 flex flex-col items-center">
         <h1 className="text-3xl font-bold text-blue-950 text-center mb-5 py-5">
           Create an Account
         </h1>

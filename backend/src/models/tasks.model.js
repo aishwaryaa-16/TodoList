@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const taskSchema = new mongoose.Schema(
+const taskSchema = new mongoose.Schema(  //task table has multiple fields LIKE TODO, ISCOMPLETED, USERID
   {
     todo: {
       type: String,

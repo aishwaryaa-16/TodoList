@@ -5,7 +5,7 @@ import { Loader } from 'lucide-react';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login, isLoggingIn } = useAuthStore();
+  const { login, isLoggingIn } = useAuthStore(); // Import login action from useAuthstore
   const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
@@ -14,13 +14,13 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(formData);
+    await login(formData);  //form data is passed to login action
     navigate('/tasks');
-    console.log('Logging In...', formData);
+    console.log('Logging In...', formData);  //whatever user enters is stored in form data, when login function is called, form data is passed to it
   };
 
-  return (
-    <div className="container mx-auto my-5 p-5 rounded-xl bg-blue-200 min-h-[85vh] w-full md:w-3/4 lg:w-1/2 flex flex-col items-center">
+  return (  
+    <div className="container mx-auto my-5 p-5 rounded-xl bg-gradient-to-br from-blue-100 to-blue-300 min-h-[65vh] w-full md:w-3/4 lg:w-1/2 flex flex-col items-center">
       {isLoggingIn ? (
         <div className="flex justify-center items-center h-screen">
           <Loader className="size-10 animate-spin" />
@@ -66,7 +66,7 @@ const Login = () => {
           
           <p className="text-gray-700 mt-4">
             Don't have an account? 
-            <Link to="/signup" className="text-blue-700 font-bold ml-2">Sign Up</Link>
+            <Link to="/signup" className="text-blue-700 font-bold ml-2 hover:underline">Sign Up</Link>
           </p>
         </>
       )}

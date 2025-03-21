@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(  //user table has multiple fields LIKE EMAIL, FULLNAME, PASSWORD, LASTLOGIN, ISVERIFIED, RESETPASSWORDTOKEN, RESETPASSWORDEXPIRESAT, VERIFICATIONTOKEN, VERIFICATIONTOKENEXPIRESAT
   {
     email: {
       type: String,

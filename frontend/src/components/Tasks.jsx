@@ -11,7 +11,7 @@ const Tasks = () => {
 
   // Zustand store actions & state
   const { tasks, fetchTasks, addTask, editTask, deleteTask, toggleTaskCompletion, isLoading } =
-    useTaskStore();
+    useTaskStore();  //functions imported from useTaskStore
 
   // Fetch tasks from API on component mount
   useEffect(() => {
@@ -38,19 +38,17 @@ const Tasks = () => {
   // Handle adding a new task
   const handleAdd = async () => {
     if (todo.length > 3) {
-      await addTask({ todo, isCompleted: false });
+      await addTask({ todo, isCompleted: false }); //todo name and isCompleted status is added to the tasks table
       setTodo(""); // Clear input after adding
-    }
+    }     //add tasks is imported from useTaskStore
     fetchTasks()
   };
 
   // Handle editing a task
   const handleEdit = (id) => {
     const taskToEdit = tasks.find((task) => task._id === id);
-    console.log(tasks)
-    console.log(id);
     setTodo(taskToEdit.todo);
-    handleDelete(id) // Remove existing task for edit
+    handleDelete(id) // Remove existing task for edit from tasks table temporarily
     fetchTasks()
   };
 
@@ -61,8 +59,8 @@ const Tasks = () => {
 
 
   // Handle checkbox toggle
-  const handleCheckbox = async (id) => {
-    await toggleTaskCompletion(id);
+  const handleCheckbox = async (id) => {  
+    await toggleTaskCompletion(id);   //toggleTask is for changing the status of the task from completed to not completed
     fetchTasks()
   };
 

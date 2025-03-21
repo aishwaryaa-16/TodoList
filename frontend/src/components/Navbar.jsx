@@ -15,14 +15,14 @@ const Navbar = () => {
             Home
           </li>
         </Link>
-        {authUser && (
-          <Link to="/tasks">
+        {authUser && (    //conditional rendering- only when user is authenticated , tasks button will be displayed
+          <Link to="/tasks">  {/*tasks button is created nevertheless but is only visible and functional when user is authenticated*/}
             <li className="cursor-pointer hover:font-bold transition-all">
               Tasks
             </li>
           </Link>
         )}
-        {authUser ? (
+        {authUser ? (  //if user is authenticated , logout button displayed and functional else login button displayed
           <li
             className="cursor-pointer hover:font-bold transition-all"
             onClick={logout} // Call logout function on click

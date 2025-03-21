@@ -6,7 +6,7 @@ import { Lock } from "lucide-react";
 import toast from "react-hot-toast";
 
 const ResetPassword = () => {
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");  //two fields- password and confirm password
   const [confirmPassword, setConfirmPassword] = useState("");
   const { resetPassword, error, isLoading, message } = useAuthStore();
   const { token } = useParams();
@@ -16,7 +16,7 @@ const ResetPassword = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      toast.error("Passwords do not match!");
+      toast.error("Passwords do not match!");  //if password and confirm password do not match
       return;
     }
 

@@ -9,8 +9,8 @@ export const useTaskStore = create((set, get) => ({
   fetchTasks: async () => {
     set({ isLoading: true });
     try {
-      const res = await axiosInstance.get("/tasks/getTasks");
-      set({ tasks: res.data.tasks });
+      const res = await axiosInstance.get("/tasks/getTasks");  //FETCH THE API FROM THE BACKEND USING AXIOS AND DISPLAY THE RESULT/TASKS IN THE FRONTEND
+      set({ tasks: res.data.tasks });                          //DISPLAY, ADD, DELETE, EDIT THE TASKS IN THE FRONTEND
     } catch (error) {
       console.error("Error fetching tasks:", error);
       toast.error("Failed to load tasks");

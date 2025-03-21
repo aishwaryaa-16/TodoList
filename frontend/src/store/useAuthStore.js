@@ -13,8 +13,8 @@ export const useAuthStore = create((set, get) => ({
   isLoading: false,
   checkAuth: async () => {
     try {
-      const res = await axiosInstance.get("/auth/check");
-      set({ authUser: res.data });
+      const res = await axiosInstance.get("/auth/check");  //fetch the api specified in the backend USING AXIOUS and simultaneously display the result in the front end
+      set({ authUser: res.data });        //RESULT-CREATE USER, LOGIN, LOGOUT, VERIFY EMAIL, FORGOT PASSWORD, RESET PASSWORD
     } catch (error) {
       console.log("Error in checkAuth:", error);
       set({ authUser: null });
@@ -56,7 +56,7 @@ export const useAuthStore = create((set, get) => ({
   login: async (formData) => {
     set({ isLoggingIn: true });
     try {
-      const res = await axiosInstance.post("/auth/login", formData);
+      const res = await axiosInstance.post("/auth/login", formData); //
       set({ authUser: res.data });
       toast.success("Logged in successfully");
     } catch (error) {

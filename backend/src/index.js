@@ -20,7 +20,7 @@ app.use(
         credentials: true
     })
 )
-app.use("/api/auth", authRoutes)
+app.use("/api/auth", authRoutes)// 2 main routes- one for authentication and one for tasks operations
 app.use("/api/tasks", taskRoutes )
 
 app.listen(5000,()=>{

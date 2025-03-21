@@ -20,14 +20,14 @@ export const signup = async (req, res) => {
         .status(400)
         .json({ message: "Password must be at least 6 characters long" });
     }
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email });  //mongodb query-uses mongoose-i.e an interface btw js and mongodb
     if (user) {
       return res.status(400).json({ message: "User already exists" });
     }
     const salt = await bcrypt.genSalt(10); //generate salt
     const hashedPassword = await bcrypt.hash(password, salt); //hash the password
     const verificationToken = generateVerificationToken();
-    const newUser = new User({
+    const newUser = new User({    //mongodb query to store new user into the database
       email,
       fullName,
       password: hashedPassword,
@@ -35,7 +35,7 @@ export const signup = async (req, res) => {
       verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000,
     });
     if (newUser) {
-      //generate JWT token
+      //generate JWT token--if user closes the tab after logging in, the token is stored in the cookie and the user is logged in, as in the details are stored as a cookie in the LS temporarily , preventing the user from logging in again
       generateToken(newUser._id, res);
       await newUser.save();
       await sendVerificationEmail(newUser.email, verificationToken);
@@ -61,7 +61,7 @@ export const verifyEmail = async (req, res) => {
   const { code } = req.body;
   console.log(code);
   try {
-    const user = await User.findOne({
+    const user = await User.findOne({  //checks if the verification code entered by the user is matches the one in the database
       verificationToken: code,
       verificationTokenExpiresAt: { $gt: Date.now() },
     });
@@ -100,7 +100,7 @@ export const login = async (req, res) => {
       return res.status(400).json({ message: "Invalid Credentials" });
     }
     const isMatch = await bcrypt.compare(password, user.password);
-    if (isMatch) {
+    if (isMatch) { //when user logs in with password , it is hashed and compared with the hashed password in the database, if matched
       generateToken(user._id, res);
       user.lastLogin = new Date();
       await user.save();
@@ -108,7 +108,7 @@ export const login = async (req, res) => {
         _id: user._id,
         email: user.email,
         fullName: user.fullName,
-        profilePicture: user.profilePicture,
+        // profilePicture: user.profilePicture,
       });
     } else {
       return res
@@ -125,7 +125,7 @@ export const login = async (req, res) => {
 
 export const logout = (req, res) => {
   try {
-    res.clearCookie("jwt");
+    res.clearCookie("jwt"); //jwt token in cookie is cleared-when user logs out
     return res
       .status(200)
       .json({ success: true, message: "Logged out successfully" });
